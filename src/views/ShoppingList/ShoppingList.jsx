@@ -3,7 +3,7 @@ import AddItemForm from '../../components/AddItemForm/AddItemForm.jsx'
 import ItemList from '../../components/ItemList/ItemList.jsx'
 import { v4 as uuid } from 'uuid'
 
-const initalItems = [{
+const defaultInitalItems = [{
   text: 'Example',
   id: uuid(),
   completed: false
@@ -29,7 +29,8 @@ const itemsReducer = (items, action) => {
   }
 } 
 
-export default function ShoppingList() {
+export default function ShoppingList(props) {
+  const initalItems = props.items ?? defaultInitalItems
   const [newItem, setNewItem] = useState('')
   const [items, itemsDispatch] = useReducer(itemsReducer, initalItems)
 

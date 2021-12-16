@@ -34,7 +34,7 @@ export default function ItemDisplay({
           onClick={({target}) => handleCheckboxClick(target.checked)}
         />
         {item?.completed ? (
-          <del>{item.text}</del>
+          <del data-testid="del-tag">{item.text}</del>
         ) : (
           <>{item.text}</>
         )}
