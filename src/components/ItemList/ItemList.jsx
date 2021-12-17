@@ -7,7 +7,7 @@ export default function ItemList({
   deleteItem
 }) {
   return (
-    <ul>
+    <ul className='inline'>
       {items?.map(item => <ItemDisplay {...{ item, key: item.id, updateItem, deleteItem }} /> )}
     </ul>
   )

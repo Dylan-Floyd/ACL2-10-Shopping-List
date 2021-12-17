@@ -57,10 +57,12 @@ export default function ShoppingList(props) {
   }
 
   return (
-    <div>
-      <h2>Shopping List!</h2>
-      <AddItemForm {...{ newItem, setNewItem, handleSubmit: addItem }}/>
-      <ItemList {...{ items, updateItem, deleteItem }} />
+    <div className='flex flex-col justify-center items-center h-screen bg-slate-900 '>
+      <div className='flex flex-col items-center justify-center bg-sky-600 m-10 rounded-3xl p-10 gap-y-8 shadow-cyan-800 shadow-2xl'>
+        <h1 className='text-4xl font-bold underline text-white'>Shopping List!</h1>
+        <AddItemForm {...{ newItem, setNewItem, handleSubmit: addItem }}/>
+        <ItemList {...{ items, updateItem, deleteItem }} />
+      </div>
     </div>
   )
 }
